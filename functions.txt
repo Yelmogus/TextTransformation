@@ -1,0 +1,6 @@
+handle input
+strip input - Gokul
+calculate ngrams
+location ngrams
+check title
+send info
