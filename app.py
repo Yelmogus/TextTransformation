@@ -1,12 +1,12 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
-
+def main_routine():
+    request.data
+    return 'Hello Woas asd f  asdfdfrld!'
 
 if __name__ == '__main__':
     app.run()

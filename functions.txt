@@ -1,6 +1,5 @@
-handle input - Edwin
+handle I/O APIs - Edwin
 strip input - Gokul
 calculate ngrams - Dan
 location ngrams - Dan
 check title - Ehren
-send info

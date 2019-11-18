@@ -5,7 +5,7 @@ class MainTest(unittest.TestCase):
     def setUp(self):
         self.data = "fake data"
 
-    def test_something(self):
+    def test_given_none_when_assert_then_true(self):
         self.assertEqual(True, True)
 
 
