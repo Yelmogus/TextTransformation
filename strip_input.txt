@@ -1,5 +1,5 @@
 '''
-    strip_input:
+    stripInput:
     params: String file_name
     return: String parsed_text
     errors:
