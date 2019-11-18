@@ -1,6 +1,6 @@
 handle input
 strip input - Gokul
-calculate ngrams
-location ngrams
+calculate ngrams - Dan
+location ngrams - Dan
 check title
 send info
