@@ -1,4 +1,4 @@
-handle input
+handle input - Edwin
 strip input - Gokul
 calculate ngrams - Dan
 location ngrams - Dan
