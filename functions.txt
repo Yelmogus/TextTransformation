@@ -2,5 +2,5 @@ handle input
 strip input - Gokul
 calculate ngrams - Dan
 location ngrams - Dan
-check title
+check title - Ehren
 send info
