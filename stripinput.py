@@ -16,4 +16,4 @@
     ex: OUTPUT: "parsedtext.txt"
 '''
 def stripInput(filename):
-    return Null
+    return None

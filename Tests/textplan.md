@@ -1,14 +1,13 @@
 # Text Transformation
 Text Transformation
 LargeScale Programming Fall 2019 Rensselaer Polytechnic Institute Project
-	
-| Column header 1 | Column header 2 |
 
-| --------------:|---------------:|
+Name follows the format: GivenX_WhenFunction_ThenResult
 
-| content 1 |content 2|
-
-| content 1 |content 2|
+| Test Number | Input | Expected Output | Name | Description |
+|:-----------|:-----:|:---------------:|:----:|:-----------|
+| 1.1 | None  | None | GivenNull_WhenHandleRequest_ThenReturnNull  | Testing valid inputs |
+| 1.2 | Input Value Missing Values  | BadRequest | GivenIllFormat_WhenHandleRequest_ThenReturnError | Testing invalid inputs
 
 - [x] Examine code
 - [ ] Commit fixes

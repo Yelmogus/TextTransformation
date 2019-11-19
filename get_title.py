@@ -10,5 +10,5 @@
     If no non-empty tags are found, returns an empty string.
     
 '''
-def get_title(doc)
+def get_title(doc):
     return ""

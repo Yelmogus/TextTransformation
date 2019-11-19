@@ -19,4 +19,4 @@ ex: OUTPUT: [{"hello other", 2, [0, 5]} , {"other search", 1, [1]},
             1, [4]}]
 '''
 def calculateNGrams(file_name, n):
-    retrun [0]
+    return [0]
