@@ -38,6 +38,7 @@ description: Given a string data and and int n, calculateNGrams will:
     1.) Find all the n grams
     2.) Find out how many times those n grams appear in the data
     3.) Find out their relative locations in the data
+        3a.) This is achieved via calling locationNGrams
 
 ex: INPUT: "hello other search engine team hello other"; 2
 ex: OUTPUT: [{"hello other", 2, [0, 5]} , {"other search", 1, [1]},
