@@ -1,4 +1,6 @@
 from flask import Flask
+from flask_json import FlaskJSON, JsonError, json_response, as_json
+from flask import response
 
 app = Flask(__name__)
 
@@ -21,7 +23,9 @@ app = Flask(__name__)
     ex: OUTPUT: parsed_text
 '''
 def stripInput(data):
-    return ""
+    doc = BeautifulSoup(html)
+    text = doc.get_text()
+    return text.lower()
 
 
 '''
@@ -92,6 +96,16 @@ Description: This is the driver function and makes and receives API calls.
 """
 @app.route('/transform')
 def handleInputs():
+    if(html_bool):
+        stripped = stripInput(data)
+    else:
+        None
+    for i in n:
+        n_grams[i] = calculateNGrams(stripped, i)
+    if(title_bool == True):
+        title = checkTitle(data)
+    else:
+        None
     return 0;
 
 if __name__ == '__main__':
