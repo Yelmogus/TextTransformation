@@ -4,6 +4,6 @@
   "transformations": {
     "stripped": true,
     "grams": [1,2,3,5],
-    "title": true,
-   },
+    "title": true
+   }
 }
