@@ -5,6 +5,10 @@ from pattern.text.en import ngrams
 app = Flask(__name__)
 
 
+@app.route('/')
+def handleLandingPage():
+    return "You've reach the homepage of TextTransformation, nothing to see here"
+
 @app.route('/transform')
 def handleInputs():
     return "Hello World"
