@@ -1,0 +1,6 @@
+DATA = "data"
+TYPE = "type"
+TRANSFORMATIONS = "transformations"
+STRIPPED = "stripped"
+GRAMS = "grams"
+TITLE = "title"
