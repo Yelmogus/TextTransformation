@@ -32,12 +32,23 @@ def strip_input(doc, strip_stop_words=True):
     parsed_text = soup.get_text()
     parsed_text.lower()
 
+
     # Check out each stop word and, if its within the parsed_text, remove it
     rx = re.compile("|".join(r'\b'+x+r'\b' for x in stop_words))
     parsed_text = rx.sub('', parsed_text)
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
+    if (parsed_text[0] == "\'"):
+        s = list(parsed_text)
+        s[0] = ""
+        parsed_text = "".join(s)
+
+    if (parsed_text[-1] == "\'"):
+        s = list(parsed_text)
+        s[-1] = ""
+        parsed_text = "".join(s)
+
     parsed_text = re.sub(r'[`\=\-\~\!\@\#\$\%\^\&\*\(\)\_\+]', "", parsed_text)
 
     parsed_text = re.sub(r'\'\'', "'", parsed_text)
