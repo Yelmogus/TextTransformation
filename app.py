@@ -17,7 +17,7 @@ def handle_transformation():
     title = get_title.get_title(data[const.DATA], title_req=data[const.TRANSFORMATIONS][const.TITLE])
 
     response = {const.STRIPPED: stripped_text,
-                const.GRAMS: calculate_ngrams.calculate_ngrams(stripped_text),
+                const.GRAMS: calculate_ngrams.calculate_ngrams(stripped_text, data[const.TRANSFORMATIONS][const.GRAMS]),
                 const.TITLE: title
                 }
     return response
