@@ -1,5 +1,4 @@
-from bs4 import BeautifulSoup
-'''
+"""
     stripInput:
     params: String doc
     return: String parsed_text
@@ -16,13 +15,17 @@ from bs4 import BeautifulSoup
 
     ex: INPUT: "filename.txt"
     ex: OUTPUT: "parsedtext.txt"
-'''
-stop_words = ["the","of","to","and","in","said","for","that","was","on","he","is","with","at",
-              "by","it","from","as","be","were","an","have","his","but","has","are","not","who",
-              "they","it’s","had","will","would","about","been","this","their","new","or","which",
-              "we","more","after","us","percent","up","one","people","a","i"]
+"""
+from bs4 import BeautifulSoup
+import re
 
-def stripInput(doc):
+stop_words = ["the", "of", "to", "and", "in", "said", "for", "that", "was", "on", "he", "is", "with", "at",
+              "by", "it", "from", "as", "be", "were", "an", "have", "his", "but", "has", "are", "not", "who",
+              "they", "it’s", "had", "will", "would", "about", "been", "this", "their", "new", "or", "which",
+              "we", "more", "after", "us", "percent", "up", "one", "people", "a", "i"]
+
+
+def strip_input(doc, strip_stop_words=True):
     # Use BeautifulSoup to take the given input and strip out all the html tags
     # and then lowercase everything
     soup = BeautifulSoup(doc)
@@ -30,19 +33,20 @@ def stripInput(doc):
     parsed_text.lower()
 
     # Check out each stop word and, if its within the parsed_text, remove it
-    for x in stop_words:
-        parsed_text.replace(x, '')
+    if strip_stop_words:
+        for x in stop_words:
+            parsed_text.replace(x, '')
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
-    parsed_text = re.sub(r'[`1234567890-=~!@#$%^&*()_+]',"",parsed_text)
+    parsed_text = re.sub(r'[`=-~!@#$%^&*()_+]', "", parsed_text)
 
-    parsed_text = re.sub(r'\'\'',"'",parsed_text)
-    parsed_text = re.sub(r' \''," ",parsed_text)
-    parsed_text = re.sub(r'\' '," ",parsed_text)
+    parsed_text = re.sub(r'\'\'', "'", parsed_text)
+    parsed_text = re.sub(r' \'', " ", parsed_text)
+    parsed_text = re.sub(r'\' ', " ", parsed_text)
 
-    parsed_text = re.sub(r'--',"-",parsed_text)
-    parsed_text = re.sub(r' -'," ",parsed_text)
-    parsed_text = re.sub(r'- '," ",parsed_text)
+    parsed_text = re.sub(r'--', "-", parsed_text)
+    parsed_text = re.sub(r' -', " ", parsed_text)
+    parsed_text = re.sub(r'- ', " ", parsed_text)
 
     return parsed_text

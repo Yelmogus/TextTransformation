@@ -20,7 +20,7 @@ def handle_transformation():
         title = ""
 
     response = {"stripped": stripped_text,
-                "grams": calculate_ngrams.calculate_ngrams(stripped_text, data["transformation"]["grams"]),
+                "grams": calculate_ngrams.calculate_ngrams(stripped_text, data["transformations"]["grams"]),
                 "title": title
                 }
     return response
