@@ -6,7 +6,9 @@ errors:
     - If the data is empty, return an empty list
     - If n is not such that 1 <= n <= number of words in the data,
       return an empty list
-
+Breaks the data_string into ngrams, then assigns each gram by its relevant position in the string
+        data_str = 'hello world this is a string' and n = 2 then:
+        ngram_list = [(0, 'hello world'), (1, 'world this'), (2, 'this is'), (3, 'is a'), (4, 'a string')]
 
 description: Given a string data_str and and list n_list, calculateNGrams will:
     1.) Find all the n grams for the n's in n_list
