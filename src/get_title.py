@@ -22,16 +22,15 @@ def get_title(doc, title_req=True):
         return ""
     soup = BeautifulSoup(doc, 'html.parser')
     title = soup.title
-    if not title:
+    if not title or not title.string:
         headers = [soup.h1, soup.h2, soup.h3, soup.h4, soup.h5, soup.h6]
         for header in headers:
-            if header:
+            if header and header.string:
                 return header.string.strip()
         potential_title = soup.p
-        if potential_title:
+        if potential_title and potential_title.string:
             return potential_title.string
         else:
             return ""
     else:
         return title.string.strip()
-
