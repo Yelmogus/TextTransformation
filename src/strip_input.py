@@ -12,12 +12,15 @@ from bs4 import BeautifulSoup
         2) Go through the string and remove all extra characters (eg. ain''t -> ain't)
         3) Go through the string and lowercase all words
         4) Remove all stop words () from the parsed text
-        4) Return the text
+        5) Return the text
 
     ex: INPUT: "filename.txt"
     ex: OUTPUT: "parsedtext.txt"
 '''
-stop_words = []
+stop_words = ["the","of","to","and","in","said","for","that","was","on","he","is","with","at",
+              "by","it","from","as","be","were","an","have","his","but","has","are","not","who",
+              "they","it’s","had","will","would","about","been","this","their","new","or","which",
+              "we","more","after","us","percent","up","one","people","a","i"]
 
 def stripInput(doc):
     soup = BeautifulSoup(doc)
@@ -26,5 +29,8 @@ def stripInput(doc):
 
     for x in stop_words:
         parsed_text.replace(x, '')
+
+    for word in parsed_text.split():
+        word.strip("\'")
 
     return parsed_text
