@@ -23,14 +23,26 @@ stop_words = ["the","of","to","and","in","said","for","that","was","on","he","is
               "we","more","after","us","percent","up","one","people","a","i"]
 
 def stripInput(doc):
+    # Use BeautifulSoup to take the given input and strip out all the html tags
+    # and then lowercase everything
     soup = BeautifulSoup(doc)
     parsed_text = soup.get_text()
     parsed_text.lower()
 
+    # Check out each stop word and, if its within the parsed_text, remove it
     for x in stop_words:
         parsed_text.replace(x, '')
 
-    for word in parsed_text.split():
-        word.strip("\'")
+    # Go through parsed_text and strip out all extra chracters
+    # Also be sure to handle special cases when it comes to ' and -
+    parsed_text = re.sub(r'[`1234567890-=~!@#$%^&*()_+]',"",parsed_text)
+
+    parsed_text = re.sub(r'\'\'',"'",parsed_text)
+    parsed_text = re.sub(r' \''," ",parsed_text)
+    parsed_text = re.sub(r'\' '," ",parsed_text)
+
+    parsed_text = re.sub(r'--',"-",parsed_text)
+    parsed_text = re.sub(r' -'," ",parsed_text)
+    parsed_text = re.sub(r'- '," ",parsed_text)
 
     return parsed_text
