@@ -1,10 +1,6 @@
 from flask import Flask, request, json
-from flask_json import FlaskJSON, JsonError, json_response, as_json
-from src import get_title, handle_input, location_ngrams, ngrams, strip_input
-import json
-from flask import Flask, request, json
 from flask_json import FlaskJSON, as_json
-from src import get_title, calculate_ngrams, strip_input
+from src import get_title, strip_input, calculate_ngrams, constants as const
 import json
 
 app = Flask(__name__)
@@ -17,15 +13,12 @@ def handle_transformation():
     client_request_data = request.data.decode()
     data = json.loads(client_request_data)
 
-    stripped_text = strip_input.strip_input(data["data"])
-    if data["transformations"]["title"]:
-        title = get_title.get_title(data["data"])
-    else:
-        title = ""
+    stripped_text = strip_input.strip_input(data[const.DATA], strip_stop_words=data[const.TRANSFORMATIONS][const.STRIPPED])
+    title = get_title.get_title(data[const.DATA], title_req=data[const.TRANSFORMATIONS][const.TITLE])
 
-    response = {"stripped": stripped_text,
-                "grams": location_ngrams.locationNGrams(stripped_text),
-                "title": title
+    response = {const.STRIPPED: stripped_text,
+                const.GRAMS: calculate_ngrams.calculate_ngrams(stripped_text),
+                const.TITLE: title
                 }
     return response
 
