@@ -20,8 +20,8 @@ from bs4 import BeautifulSoup
 import re
 
 stop_words = ["the", "of", "to", "and", "in", "said", "for", "that", "was", "on", "he", "is", "with", "at",
-              "by", "it", "from", "as", "be", "were", "an", "have", "his", "but", "has", "are", "not", "who",
-              "they", "it’s", "had", "will", "would", "about", "been", "this", "their", "new", "or", "which",
+              "by", "it's", "it", "from", "as", "be", "were", "an", "have", "his", "but", "has", "are", "not", "who",
+              "they", "had", "will", "would", "about", "been", "this", "their", "new", "or", "which",
               "we", "more", "after", "us", "percent", "up", "one", "people", "a", "i"]
 
 
@@ -33,9 +33,8 @@ def strip_input(doc, strip_stop_words=True):
     parsed_text.lower()
 
     # Check out each stop word and, if its within the parsed_text, remove it
-    if strip_stop_words:
-        for x in stop_words:
-            parsed_text.replace(x, '')
+    rx = re.compile("|".join(r'\b'+x+r'\b' for x in stop_words))
+    parsed_text = rx.sub('', parsed_text)
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
