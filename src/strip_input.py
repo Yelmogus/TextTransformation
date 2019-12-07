@@ -39,7 +39,7 @@ def strip_input(doc, strip_stop_words=True):
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
-    parsed_text = re.sub(r'[`=-~!@#$%^&*()_+]', "", parsed_text)
+    parsed_text = re.sub(r'[\`\=\-\~\!\@\#\$\%\^\&\*\(\)\_\+]', "", parsed_text)
 
     parsed_text = re.sub(r'\'\'', "'", parsed_text)
     parsed_text = re.sub(r' \'', " ", parsed_text)
