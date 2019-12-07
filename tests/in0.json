@@ -1,9 +1,9 @@
 {
-   "type": "html",
-   "data": "<h1> hello world </h1>",
-   "transformations": {
-	"stripped": true,
-	"grams": [1,2]
-	"title": true
+  "type": "html",
+  "data": "<h1> hello world </h1>",
+  "transformations": {
+    "stripped": true,
+    "grams": [1,2]
+    "title": true
    },
 }
