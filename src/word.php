@@ -1,5 +1,6 @@
 <?php // https://www.cs.rpi.edu/~goldsd/wordfreq.php
-
+  //This was used for testing purposes only, so that we could compare
+  //parts of our code to something semi-reliable
   session_start();
 
   ini_set( "allow_url_fopen", true );
