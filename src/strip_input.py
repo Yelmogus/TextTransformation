@@ -39,12 +39,12 @@ def strip_input(doc, strip_stop_words=True):
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
-    if (parsed_text[0] == "\'"):
+    if (parsed_text[0] == "\'" && parsed_text[0] == "-"):
         s = list(parsed_text)
         s[0] = ""
         parsed_text = "".join(s)
 
-    if (parsed_text[-1] == "\'"):
+    if (parsed_text[-1] == "\'" && parsed_text[0] == "-"):
         s = list(parsed_text)
         s[-1] = ""
         parsed_text = "".join(s)
@@ -52,11 +52,9 @@ def strip_input(doc, strip_stop_words=True):
     parsed_text = re.sub(r'[`\=\-\~\!\@\#\$\%\^\&\*\(\)\_\+]', "", parsed_text)
 
     parsed_text = re.sub(r'\'\'', "'", parsed_text)
-    parsed_text = re.sub(r' \'', " ", parsed_text)
-    parsed_text = re.sub(r'\' ', " ", parsed_text)
+    parsed_text = re.sub(r' \'|\' ', " ", parsed_text)
 
     parsed_text = re.sub(r'--', "-", parsed_text)
-    parsed_text = re.sub(r' -', " ", parsed_text)
-    parsed_text = re.sub(r'- ', " ", parsed_text)
+    parsed_text = re.sub(r' -|- ', " ", parsed_text)
 
     return parsed_text
