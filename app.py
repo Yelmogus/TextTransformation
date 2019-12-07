@@ -1,17 +1,29 @@
-from flask import Flask
-from flask_json import FlaskJSON, JsonError, json_response, as_json
-from pattern.text.en import ngrams
+from flask import Flask, request, json
+from flask_json import FlaskJSON, as_json
+from src import get_title, calculate_ngrams, strip_input
+import json
 
 app = Flask(__name__)
+FlaskJSON(app)
 
 
-@app.route('/')
-def handleLandingPage():
-    return "You've reach the homepage of TextTransformation, nothing to see here"
+@app.route('/transform', methods=['POST'])
+@as_json
+def handle_transformation():
+    client_request_data = request.data.decode()
+    data = json.loads(client_request_data)
 
-@app.route('/transform')
-def handleInputs():
-    return "Hello World"
+    stripped_text = strip_input.stripInput(data["data"])
+    if data["transformations"]["title"]:
+        title = get_title.get_title(data["data"])
+    else:
+        title = ""
+
+    response = {"stripped": stripped_text,
+                "grams": calculate_ngrams.calculate_ngrams(stripped_text, data["transformation"]["grams"]),
+                "title": title
+                }
+    return response
 
 
 if __name__ == '__main__':

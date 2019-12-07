@@ -7,3 +7,11 @@
     "title": true
    }
 }
+
+//Sample JSON for Information that we retrun to the caller
+{
+	"stripped": "hello world", //stripped text
+	"grams": {1: {"hello": [0, 1], "world": [2]}, 2: {"hello hello": [0], "hello world": [1]}, 3: {"hello hello world": [0]}},
+	//the above is formatted as {n: {"n-gram": [relative locations of occurence as a list]}}
+	"title": "Hello World" //empty if no title can be found
+}
