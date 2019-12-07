@@ -8,12 +8,12 @@ errors:
       return an empty list
 
 
-description: Given a string data and and int n, calculateNGrams will:
-    1.) Find all the n grams
+description: Given a string data_str and and list n_list, calculateNGrams will:
+    1.) Find all the n grams for the n's in n_list
     2.) Find out how many times those n grams appear in the data
     3.) Find out their relative locations in the data
 
-ex: INPUT: "hello other search engine team hello other"; 2
+ex: INPUT: "hello other search engine team hello other"; [2]
 ex: OUTPUT: [{"hello other", 2, [0, 5]} , {"other search", 1, [1]},
             {"search engine"}, 1, [2]}, {"engine team", 1, [3]}, {"team hello"},
             1, [4]}]
