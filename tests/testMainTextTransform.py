@@ -1,13 +1,14 @@
 import unittest
+from app import app
 
 
 class MainTest(unittest.TestCase):
-    def setUp(self):
-        self.data = "fake data"
 
-    def test_given_none_when_assert_then_true(self):
-        self.assertEqual(True, True)
-
+    def test_transform(self):
+        tester = app.test_client(self)
+        response = tester.post('/transform', content_type='html/text')
+        self.assertEqual(response.status, 200)
+        self.assertEqual(response.data, )
 
 if __name__ == '__main__':
     unittest.main()
