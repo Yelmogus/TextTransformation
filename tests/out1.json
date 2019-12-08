@@ -1,8 +1,5 @@
 {
-	"stripped": "hello world",
-	"grams": {1: {"hello": [0], "world": [1]}, 2: {"hello world": [0]}},
-	"title": "This is a test!"
+	"stripped": "hiya friends",
+	"grams": {1: {"hiya": [0], "friends": [1]}, 2: {"hiya friends": [0]}},
+	"title": ""
 }
-
-
-"This is a test! I'm not in a tag, no rules for me!<h1> hello world </h1>
