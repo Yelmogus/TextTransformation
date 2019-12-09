@@ -11,6 +11,7 @@ Name follows the format: GivenX_WhenFunction_ThenResult
 | 2 | in2.json | out2.json | Empty JSON | Test what happens when an empty JSON is sent |
 | 3 | in3.json | out3.txt | Large Input | This test what happens when we send a large webpage |
 | 4 | in4.json | out4.json | Small, but realistic input | This test tests several things in small and manageable html file
+| 5 | in5.json | out5.json | Keep stop words, no title | Same as test 4, except that, we want to keep stop words and don't want the title
 
 - [x] Examine code
 - [ ] Commit fixes
