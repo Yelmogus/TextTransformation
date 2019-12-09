@@ -15,6 +15,10 @@ import math
 print(s_i.strip_input("<script> this text is within script tags </script> <p>this isn't.</p>"))
 #no space case
 print(s_i.strip_input("<p>this spaces please</p><p>don't this isn't.</p>"))
+#comment case
+print(s_i.strip_input("<p>this spaces please</p><!--This a comment! --><p>don't this isn't.</p>"))
+#none case
+print(s_i.strip_input(""))
 
 #for i in df.index:
 #    print(str(df['Test Input'][i]))

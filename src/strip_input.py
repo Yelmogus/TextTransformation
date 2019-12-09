@@ -26,6 +26,8 @@ stop_words = ["the", "of", "to", "and", "in", "said", "for", "that", "was", "on"
 
 
 def strip_input(doc, strip_stop_words=True):
+    if not doc:
+        return ""
     # Use BeautifulSoup to take the given input and strip out all the html tags
     # and then lowercase everything
     soup = BeautifulSoup(doc, "lxml")
