@@ -29,7 +29,10 @@ def strip_input(doc, strip_stop_words=True):
     # Use BeautifulSoup to take the given input and strip out all the html tags
     # and then lowercase everything
     soup = BeautifulSoup(doc, "lxml")
-    parsed_text = soup.get_text()
+    #remove script tags
+    for script in soup(["script", "style"]):
+        script.decompose()
+    parsed_text = soup.get_text(" ")
     parsed_text = parsed_text.lower()
 
 
