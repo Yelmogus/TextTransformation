@@ -28,24 +28,25 @@ stop_words = ["the", "of", "to", "and", "in", "said", "for", "that", "was", "on"
 def strip_input(doc, strip_stop_words=True):
     # Use BeautifulSoup to take the given input and strip out all the html tags
     # and then lowercase everything
-    soup = BeautifulSoup(doc)
+    soup = BeautifulSoup(doc, "lxml")
     parsed_text = soup.get_text()
     parsed_text.lower()
 
 
     # Check out each stop word and, if its within the parsed_text, remove it
     #this regex checks for each stop word surrounded by word breaks (\b), excluding apostrophes.
-    rx = re.compile("|".join(r'(?<!\'\w)\b'+x+r'\b(?!\'\w)' for x in stop_words))
-    parsed_text = rx.sub('', parsed_text)
+    if strip_stop_words:
+        rx = re.compile("|".join(r'(?<!\'\w)\b'+x+r'\b(?!\'\w)' for x in stop_words))
+        parsed_text = rx.sub('', parsed_text)
 
     # Go through parsed_text and strip out all extra chracters
     # Also be sure to handle special cases when it comes to ' and -
-    if (parsed_text[0] == "\'" && parsed_text[0] == "-"):
+    if parsed_text[0] == "\'" and parsed_text[0] == "-":
         s = list(parsed_text)
         s[0] = ""
         parsed_text = "".join(s)
 
-    if (parsed_text[-1] == "\'" && parsed_text[0] == "-"):
+    if parsed_text[-1] == "\'" and parsed_text[0] == "-":
         s = list(parsed_text)
         s[-1] = ""
         parsed_text = "".join(s)
@@ -58,4 +59,4 @@ def strip_input(doc, strip_stop_words=True):
     parsed_text = re.sub(r'--', "-", parsed_text)
     parsed_text = re.sub(r' -|- ', " ", parsed_text)
 
-    return parsed_text
+    return parsed_text.strip()

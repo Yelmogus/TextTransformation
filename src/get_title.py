@@ -26,12 +26,12 @@ def get_title(doc, title_req=True):
         headers = [soup.h1, soup.h2, soup.h3, soup.h4, soup.h5, soup.h6]
         for header in headers:
             if header:
-                return header.string
+                return header.string.strip()
         potential_title = soup.p
         if potential_title:
             return potential_title.string
         else:
             return ""
     else:
-        return title.string
+        return title.string.strip()
 

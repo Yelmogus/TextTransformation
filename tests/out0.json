@@ -1,5 +1,6 @@
 {
 	"stripped": "hello world",
-	"grams": {1: {"hello": [0], "world": [1]}, 2: {"hello world": [0]}},
+	"status": 200,
+	"grams": {"1": {"hello": [0], "world": [1]}, "2": {"hello world": [0]}},
 	"title": "hello world"
 }
