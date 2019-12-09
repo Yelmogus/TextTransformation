@@ -10,6 +10,7 @@ Name follows the format: GivenX_WhenFunction_ThenResult
 | 1 | in1.json | out1.json | No Title | Testing inputs that request a title when there is none |
 | 2 | in2.json | out2.json | Empty JSON | Test what happens when an empty JSON is sent |
 | 3 | in3.json | out3.txt | Large Input | This test what happens when we send a large webpage |
+| 4 | in4.json | out4.json | Small, but realistic input | This test tests several things in small and manageable html file
 
 - [x] Examine code
 - [ ] Commit fixes
