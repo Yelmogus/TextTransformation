@@ -1,0 +1,9 @@
+{
+  "type": "html",
+  "data": "<body> Hiya Friends </body>",
+  "transformations": {
+    "stripped": true,
+    "grams": [1,2],
+    "title": true
+   }
+}

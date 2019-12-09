@@ -1,0 +1,6 @@
+{
+	"stripped": "hiya friends",
+	"status": 200,
+	"grams": {"1": {"hiya": [0], "friends": [1]}, "2": {"hiya friends": [0]}},
+	"title": ""
+}

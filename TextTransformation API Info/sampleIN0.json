@@ -1,9 +1,0 @@
-{
-  "type": "html" ,
-  "data": "<title>This is a test!</title><script>holy crap, a script!</script>I'm not in a tag, no rules for me!<h1> hello world </h1>",
-  "transformations": {
-    "stripped": true,
-    "grams": [1,2,3,5],
-    "title": true
-   }
-}
