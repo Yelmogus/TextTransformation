@@ -1,0 +1,17 @@
+{
+  "type": "html",
+  "data": "<!DOCTYPE html>
+  <html>
+  <body>
+  <title>This is a basic webpage that does basic things</title>
+  <h1 style=\"color:green;text-align:center;\">This is a green heading</h1>
+  <p style=\"color:red;font-style:italic\">This is a red paragraph.</p>
+
+  </body>
+  </html>",
+  "transformations": {
+    "stripped": true,
+    "grams": [1,2],
+    "title": true
+   }
+}
