@@ -5,7 +5,8 @@ from app import app
 
 @pytest.mark.parametrize("input_file, output_file", [
     ("in0.json", "out0.json"),
-    ("in1.json", "out1.json")
+    ("in1.json", "out1.json"),
+    ("in2.json", "out2.json")
 ])
 def test_transform(input_file, output_file):
     tester = app.test_client()
