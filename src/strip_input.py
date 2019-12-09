@@ -30,7 +30,7 @@ def strip_input(doc, strip_stop_words=True):
     # and then lowercase everything
     soup = BeautifulSoup(doc, "lxml")
     parsed_text = soup.get_text()
-    parsed_text.lower()
+    parsed_text = parsed_text.lower()
 
 
     # Check out each stop word and, if its within the parsed_text, remove it

@@ -12,6 +12,10 @@ FlaskJSON(app)
 def handle_transformation():
     client_request_data = request.data.decode()
     data = json.loads(client_request_data)
+    if not data:
+        return {c.STRIPPED: "",
+                c.GRAMS: {},
+                c.TITLE: ""}
 
     stripped_text = strip_input.strip_input(data[c.DATA], strip_stop_words=data[c.TRANS][c.STRIPPED]).lower()
     title = get_title.get_title(data[c.DATA], title_req=data[c.TRANS][c.TITLE])
