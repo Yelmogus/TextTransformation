@@ -21,8 +21,8 @@ ex: OUTPUT: [{"hello other", 2, [0, 5]} , {"other search", 1, [1]},
             1, [4]}]
 """
 
-from pattern.text.en import ngrams
-
+# from pattern.text.en import ngrams
+from nltk.util import ngrams as ng
 
 def calculate_ngrams(data_str, n_list):
     """ Breaks the data_string into ngrams, then assigns each gram by its relevant position in the string
@@ -31,7 +31,9 @@ def calculate_ngrams(data_str, n_list):
     all_ngrams = dict.fromkeys([str(n) for n in n_list], {})
     for n in n_list:
         ngram_index = {}
-        ngram_list = [(pos, " ".join(gram).strip()) for pos, gram in enumerate(ngrams(data_str, n=n))]
+        tokens = [token for token in data_str.split(" ") if token != ""]
+        # ngram_list = [(pos, " ".join(gram).strip()) for pos, gram in enumerate(ngrams(data_str, n=n))]
+        ngram_list = [(pos, " ".join(gram).strip()) for pos, gram in enumerate(ng(tokens, n=n))]
         for pos, gram in ngram_list:
             if gram in ngram_index:
                 ngram_index[gram].append(pos)
