@@ -1,6 +1,6 @@
 {
-	"stripped": "basic webpage does basic things\ngreen heading\nred paragraph",
+	"stripped": "basic webpage  does basic things \n    green heading \n    red paragraph",
 	"status": 200,
 	"grams": {"1": {"basic": [0,3], "webpage": [1], "does": [2], "things": [4], "green": [5], "heading": [6], "red": [7], "paragraph": [8]}, "2": {"basic webpage": [0], "webpage does": [1], "does basic": [2], "basic things": [3], "things green": [4], "green heading": [5], "heading red": [6], "red paragraph": [7]}},
-	"title": "This is a basic webpage that does basic things"
+	"title": "this is a basic webpage that does basic things"
 }
