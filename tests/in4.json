@@ -1,14 +1,6 @@
 {
   "type": "html",
-  "data": "<!DOCTYPE html>
-  <html>
-  <body>
-  <title>This is a basic webpage that does basic things</title>
-  <h1 style=\"color:green;text-align:center;\">This is a green heading</h1>
-  <p style=\"color:red;font-style:italic\">This is a red paragraph.</p>
-
-  </body>
-  </html>",
+  "data": "<!DOCTYPE html>\n<html>\n<body>\n<title>This is a basic webpage that does basic things</title>\n<h1 style=\"color:green;text-align:center;\">This is a green heading</h1>\n<p style=\"color:red;font-style:italic\">This is a red paragraph.</p>\n</body>\n</html>",
   "transformations": {
     "stripped": true,
     "grams": [1,2],
